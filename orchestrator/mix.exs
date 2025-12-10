@@ -60,7 +60,14 @@ defmodule Orchestrator.MixProject do
       {:gettext, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      #RabbitMQ e Redis
+      {:amqp, "~> 3.3"},
+      {:redix, "~> 1.3"},
+      #Processamento de mensagens
+      {:gen_stage, "~> 1.2"},
+      {:broadway, "~> 1.0"},
+      {:broadway_rabbitmq, "~> 0.8.2"}
     ]
   end
 
