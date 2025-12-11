@@ -62,7 +62,7 @@ defmodule Orchestrator.MixProject do
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
       #RabbitMQ e Redis
-      {:amqp, "~> 3.3"},
+      {:amqp, "~> 4.0"},
       {:redix, "~> 1.3"},
       #Processamento de mensagens
       {:gen_stage, "~> 1.2"},
