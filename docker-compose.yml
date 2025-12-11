@@ -27,6 +27,37 @@ services:
       - redis_data:/data
     command: redis-server --appendonly yes
 
+  orchestrator:
+    build: ./orchestrator
+    command: sh -c "mix ecto.create && mix ecto.migrate && mix phx.server"
+    volumes:
+      - ./orchestrator:/app
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      redis:
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      RABBITMQ_URL: ${RABBITMQ_URL}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-devkey}
+
+  scraper:
+    build: ./workers
+    volumes:
+      - ./workers:/app
+    command: python worker_consumer.py
+    depends_on:
+      - rabbitmq
+      - redis
+    environment:
+      - name=value
+      - DATABASE_URL: ${DATABASE_URL}
+      - RABBITMQ_URL: ${RABBITMQ_URL}
+
 volumes:
   rabbitmq_data:
   redis_data:
