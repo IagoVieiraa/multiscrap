@@ -67,7 +67,9 @@ defmodule Orchestrator.MixProject do
       #Processamento de mensagens
       {:gen_stage, "~> 1.2"},
       {:broadway, "~> 1.0"},
-      {:broadway_rabbitmq, "~> 0.8.2"}
+      {:broadway_rabbitmq, "~> 0.8.2"},
+      # Utilities
+      {:uuid, "~> 1.1"}
     ]
   end
 
