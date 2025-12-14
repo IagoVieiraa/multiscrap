@@ -9,9 +9,11 @@ Para adicionar um novo scraper:
 from .mercadolivre import MercadoLivreScraper
 from .amazon import AmazonScraper
 from .olx import OLXScraper
+from .netshoes import NetshoesScraper
 
 __all__ = [
     "MercadoLivreScraper",
     "AmazonScraper",
     "OLXScraper",
+    "NetshoesScraper",
 ]

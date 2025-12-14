@@ -231,8 +231,7 @@ class JobConsumer:
 def main():
     """Ponto de entrada do consumer."""
     rabbitmq_url = os.environ.get(
-        "RABBITMQ_URL",
-        "amqp://guest:guest@localhost:5672"
+        "RABBITMQ_URL"
     )
 
     consumer = JobConsumer(rabbitmq_url)
