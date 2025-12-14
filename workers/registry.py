@@ -8,7 +8,7 @@ import importlib
 import pkgutil
 import logging
 from typing import Optional, Type
-from base_scraper import BaseScraper
+from workers.base.base_scraper import BaseScraper
 
 logger = logging.getLogger(__name__)
 

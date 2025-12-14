@@ -9,7 +9,7 @@ Ações disponíveis:
 import sys
 sys.path.insert(0, '..')
 
-from base_scraper import BaseScraper, ScraperResult
+from workers.base.base_scraper import BaseScraper, ScraperResult
 
 
 class MercadoLivreScraper(BaseScraper):
